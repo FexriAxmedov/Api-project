@@ -22,4 +22,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HospitalDAL\HospitalDAL.csproj" />
+  </ItemGroup>
+
 </Project>
