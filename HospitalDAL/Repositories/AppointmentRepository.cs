@@ -22,6 +22,35 @@ namespace HospitalDAL.Repositories
             _dbContext.SaveChanges();
             return obj;
         }
+        public  List<Appointment> GetAppointments()
+        {
+            var appointments = _dbContext.Appointments.ToList();
+            return appointments;
+        }
+        public Appointment GetAppointmentById(int id)
+        {
+            var appointment = _dbContext.Appointments.Find(id);
+            return appointment;
+        }
+        public Appointment UpdateAppointment(Appointment appointment)
+        {
+            var dbAppointment = _dbContext.Appointments.Find(appointment.Id);
+            dbAppointment.AppointmentNumber = appointment.AppointmentNumber;
+            dbAppointment.PhoneNumber = appointment.PhoneNumber;
+            dbAppointment.AppointmentType = appointment.AppointmentType;
+            dbAppointment.AppointmentDate = appointment.AppointmentDate;
+            dbAppointment.Description = appointment.Description;
 
+
+            _dbContext.Appointments.Update(dbAppointment);
+            _dbContext.SaveChanges();
+            return appointment;
+        }
+        public void DeleteAppointment(Appointment appointment)
+        {
+            _dbContext.Appointments.Remove(appointment);
+            _dbContext.SaveChanges();
+
+        }
     }
 }
