@@ -33,6 +33,7 @@ namespace HospitalManagement
             services.AddScoped<IAppointmentRepository, AppointmentRepository>();
             services.AddScoped<IHospitalRepository, HospitalRepository>();
             services.AddScoped<IDoctorRepository, DoctorRepository>();
+            services.AddScoped<IPatientRepository, PatientRepository>();
             services.AddDbContext<AppDBContext>(opts =>
             {
                 opts.UseSqlServer(Configuration.GetConnectionString("cString"));
