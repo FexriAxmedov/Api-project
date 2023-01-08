@@ -101,8 +101,8 @@ namespace HospitalDAL.Migrations
                     b.Property<string>("Place")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Type")
-                        .HasColumnType("bit");
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

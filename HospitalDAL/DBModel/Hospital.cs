@@ -10,7 +10,7 @@ namespace HospitalDAL.DBModel
     {
         public string Name { get; set; }
         public string Place { get; set; }
-        public bool Type { get; set; }
+        public string Type { get; set; }
         public string Description { get; set; }
         public string Address { get; set; }
     }
